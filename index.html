@@ -1,0 +1,157 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Reign The Anime Zone</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="script.js" defer></script>
+    <link
+      rel="stylesheet"
+      href="
+    https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+  </head>
+  <body>
+    <header class="header">
+      <div class="logo"> <img src="asset/Anime logo.png"  class="logo-img" alt=""> Reign Anime Zone</div>
+      <nav class="nav-tabs">
+        <a href="#" class="nav-tab active">Movies</a>
+        <a href="#" class="nav-tab">Series</a>
+      </nav>
+
+      <div class="search-bar">
+        <input type="search" class="search-input" placeholder="Search..." oninput="searchAnime()">
+        <div class="user-actions">
+          <i class="fas fa-cog" style="cursor: pointer"></i>
+          <i
+            class="fas fa-user-circle"
+            style="cursor: pointer; color: rgb(198, 2, 159)"
+          ></i>
+        </div>
+      </div>
+    </header>
+
+    <div class="main-container">
+      <aside class="sidebar">
+        <div class="sidebar-section">
+          <h3 class="sidebar-title">Menu</h3>
+          <a href="#" class="sidebar-item active">
+            <i class="fas fa-home"></i> Home
+          </a>
+          <a href="#" class="sidebar-item">
+            <i class="fas fa-user"></i> Discord
+          </a>
+          <a href="#" class="sidebar-item">
+            <i class="fas fa-calendar"></i> Events
+          </a>
+        </div>
+
+        <div class="sidebar-section">
+          <h3 class="sidebar-title">Shows</h3>
+          <a href="#" class="sidebar-item">
+            <i class="fas fa-film"></i> Series
+          </a>
+          <a href="#" class="sidebar-item">
+            <i class="fas fa-clock"></i> Recently Watched
+          </a>
+          <a href="#" class="sidebar-item">
+            <i class="fas fa-download"></i> Download Now
+          </a>
+        </div>
+
+        <div class="sidebar-section">
+          <h3 class="sidebar-title">General</h3>
+          <a href="#" class="sidebar-item">
+            <i class="fas fa-cog"></i> Settings
+          </a>
+          <a href="#" class="sidebar-item">
+            <i class="fas fa-user"></i> Sign IN
+          </a>
+        </div>
+      </aside>
+
+      <main class="content">
+        <div class="anime-section">
+          <div class="anime-overlay">
+            <div class="anime-content">
+              <h1 class="anime-title">FULLMETAL ALCHEMIST BROTHERHOOD</h1>
+              <p class="anime-description">
+                After a tragic attempt to resurrect their deceased mother
+                through forbidden alchemy (Human Transmutation), Edward loses
+                his limbs, and Alphonse loses his entire body. To save him,
+                Edward sacrifices his arm to affix Alphonse’s soul to the armor.
+                Determined to restore their bodies, the brothers embark on a
+                journey to find the Philosopher’s Stone, a legendary artifact
+                said to magnify alchemical power and bypass the fundamental rule
+                of Equivalent Exchange — “to obtain something, something of
+                equal value must be lost.”
+              </p>
+              <button class="watch-buttons">
+                <a href="#" class="btn btn-primary"><i class="fas fa-play"></i> Description
+                </a>
+                <a href="#" class="btn btn-secondary"><i class="fas fa-users"></i> Characters
+                </a>
+              </button>
+            </div>
+          </div>
+            <div class="play-button"><i class="fas fa-play"></i></div>
+        </div>
+
+        <section class="section">
+            <h2 class="section-title">Popular Anime</h2>
+            <div class="loader"></div>
+            <div class="anime-grid" id="animeGrid"></div>
+            <!-- Anime cards will be loaded via API -->
+
+            
+
+        </section>
+      </main>
+
+      <div class="sidebar-right">
+        <div class="sidebar-section">
+            <h3 class="sidebar-title">Top Anime</h3>
+            <div class="top-anime-item"> 
+                <div class="top-anime-poster" style="background-image: url(https://m.media-amazon.com/images/M/MV5BNjdkOTE4NWItYWUyNS00ZTQ5LWE5ODYtODA1YWUxNThhY2E1XkEyXkFqcGc@._V1_.jpg);">
+                </div>
+                <div class="top-anime-info">
+                    <h4>Shangri-La Frontier</h4>
+                    <p>2 Seasons</p>
+                </div>
+            </div>
+
+            <div class="top-anime-item"> 
+                <div class="top-anime-poster" style="background-image: url(https://mediaproxy.tvtropes.org/width/1200/https://static.tvtropes.org/pmwiki/pub/images/sololeveling_suggestion_14_1.png);">
+                </div>
+                <div class="top-anime-info">
+                    <h4>Solo Leveling</h4>
+                    <p>2 Seasons</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="sidebar-section">
+            <h3 class="sidebar-title">Recently Watched</h3>
+            <div class="top-anime-item"> 
+                <div class="top-anime-poster" style="background-image: url(https://m.media-amazon.com/images/M/MV5BY2QzODA5OTQtYWJlNi00ZjIzLThhNTItMDMwODhlYzYzMjA2XkEyXkFqcGc@._V1_.jpg);">
+                </div>
+                <div class="top-anime-info">
+                    <h4>My Hero Academia</h4>
+                    <p>Continue Watching</p>
+                </div>
+            </div>
+
+            <div class="top-anime-item"> 
+                <div class="top-anime-poster" style="background-image: url(https://m.media-amazon.com/images/M/MV5BNWU3OTRlNWMtZGQyOC00YzJhLWIyNjctYmI2YzgyZTQ3ZDNmXkEyXkFqcGc@._V1_.jpg);">
+                </div>
+                <div class="top-anime-info">
+                    <h4>That Time I Got Reincarnated as a Slime</h4>
+                    <p>Continue Watching</p>
+                </div>
+            </div>
+    </div>
+
+        </div>
+  </body>
+</html>
