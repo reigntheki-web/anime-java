@@ -30,7 +30,8 @@ let animeData = [];
             const animeGrid = document.getElementById('animeGrid');
             animeGrid.innerHTML = ''
 
-         data.data.forEach(anime => {
+         animeData = data.data;
+         animeData.forEach(anime => {
             const genres = anime.genres.map((g) => g.name).join(', ');
 
             animeGrid.innerHTML += `
