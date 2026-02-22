@@ -388,6 +388,13 @@ Anime Grid and Cards
     color: #888;
 }
 
+/* 
+
+Responsive Design 
+
+
+*/
+
 @media (max-width: 1250px) {
     .main-container {
         flex-direction: column;
