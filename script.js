@@ -8,20 +8,59 @@ const card  = `<div class="anime-card">
                 </div>
             </div>`
 let animeData = [];
-            
-        function searchAnime() {
-            input = document.querySelector("[data-search]").value.toLowerCase();
-            const filteredAnime = animeData.filter((anime) => {
-                return anime.title.toLowerCase().includes(input);
-            })
-            for (let i = 0; i < filteredAnime.length; i++) {
-               if (filteredAnime[i].title.toLowerCase().includes(input)) {
-                document.getElementById('animeGrid').innerHTML = card;
-            }else {
-                document.querySelectorAll('.anime-card')[i].style.display = "none";
-            }
-        }
-        }
+let debounceTimer;
+
+async function searchAnime() {
+  clearTimeout(debounceTimer);
+  debounceTimer = setTimeout(async () => {
+    const input = document.querySelector("[data-search]").value.toLowerCase().trim();
+    const animeGrid = document.getElementById('animeGrid');
+
+     
+
+    document.body.classList += ' loader'
+    document.body.classList.remove('loader');
+
+    if (!input) {
+      loadAnime();
+      return;
+    }
+
+    animeGrid.innerHTML = '<div class="loader"></div>';
+
+    try {
+      const response = await fetch(`https://api.jikan.moe/v4/anime?q=${encodeURIComponent(input)}&limit=25`);
+      const data = await response.json();
+
+      animeGrid.innerHTML = '';
+
+if (!data.data || data.data.length === 0) {
+  animeGrid.innerHTML = '<p style="color: white;">No results found.</p>';
+  return;
+}
+
+data.data
+  .slice(0, 7)
+  .forEach(anime => {
+    const genres = anime.genres.map(g => g.name).join(', ');
+
+    animeGrid.innerHTML += `
+      <div class="anime-card">
+        <img src="${anime.images.jpg.image_url}" alt="${anime.title}" class="anime-card-img">
+        <div class="anime__card-title">${anime.title}</div>
+        <div>${anime.score || "N/A"}</div>
+        <div>${genres}</div>
+      </div>
+    `;
+  });
+
+    } catch (error) {
+      animeGrid.innerHTML = '<p style="color: white;">Something went wrong. Try again.</p>';
+      console.error('Search error:', error);
+    }
+
+  }, 2000);
+}
 
 
         async function loadAnime() {

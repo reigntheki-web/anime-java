@@ -268,10 +268,17 @@ Anime Grid and Cards
     color: #8c0a0a;
 }
 
+.spinner {
+    display: none !important;
+}
+
+.loader .spinner{
+    display: block !important;
+}
 
 .loader {
+    left: 900px;
     position: absolute;
-    left: 50%;
   --d:22px;
   width: 4px;
   height: 4px;
@@ -286,7 +293,7 @@ Anime Grid and Cards
     calc(-0.707*var(--d)) calc(-0.707*var(--d))0 5px,
     calc(0*var(--d))      calc(-1*var(--d))    0 6px;
   animation: l27 1s infinite steps(8);
-    opacity: 0;
+
 }
 
 @keyframes l27 {
